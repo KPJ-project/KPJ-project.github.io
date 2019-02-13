@@ -13,7 +13,7 @@ layout: compress
 <body>
     {% include nav.html %}
     <!-- Header -->
-    {% assign author = site.authors[page.author] %}
+    
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
             <div class="content">
@@ -24,6 +24,7 @@ layout: compress
                     </a>
 
                 </div>
+                {% assign author = site.authors[page.author] %}
                 <div class="post-list">
                     {% for post in site.posts %} 
                         {% if post.project == null %}
@@ -31,11 +32,11 @@ layout: compress
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
                                 {{ post.title }}
-                                
-                            </a>
-                            <p class="byline">
+                                <p class="byline">
                                 by {{ author.display_name }}
                             </p> <!-- /.byline -->
+                            </a>
+                            
                             <p>{{ post.excerpt }}</p>
                             <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
                         </li>

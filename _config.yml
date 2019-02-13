@@ -25,6 +25,18 @@ mathjax:            true
 sass:
   sass_dir:         _sass
   style:            compressed
+  
+  
+#Authors
+authors:
+  thkwon:
+    name: 권태형
+    display_name: 권태형
+    gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: kwon5604@naver.com
+    web: https://TaeHyoungKwon.github.io
+    twitter: company
+    github: https://TaeHyoungKwon.github.com
 
 # Comments
 disqus_shortname:   taylantatli

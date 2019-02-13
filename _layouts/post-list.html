@@ -1,7 +1,6 @@
 ---
 layout: compress
 ---
-
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
@@ -13,7 +12,6 @@ layout: compress
 <body>
     {% include nav.html %}
     <!-- Header -->
-    
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
             <div class="content">
@@ -22,37 +20,19 @@ layout: compress
                     <a class="btn zoombtn" href="{{site.url}}">
                         <i class="fa fa-home"></i>
                     </a>
-
                 </div>
-                {% assign selectedAuthor = page.author %}
                 <div class="post-list">
-                    {% for post in site.posts %}
-                        {% assign displayPost = false %}
-                        {% assign authors = post.author | split: ", "%}
-                        {% for currentAuthor in authors %}
-                            {% if currentAuthor == selectedAuthor %}
-                                {% assign displayPost = true%}
-                            {% endif %}
-                        {% endfor %}
-                            {% if displayPost == true %}
-                                {% if post.project == null %}
-                                    <ul>
-                                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-                                                {{ post.title }}
-                                                <span class="byline">
-
-                                                    by {{ author.display_name }}
-                                                </span> <!-- /.byline -->
-                                            </a>
-
-                                            <p>{{ post.excerpt }}</p>
-                                            <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
-                                        </li>
-                                    </ul>
-                                {% endif %}
-                            {% end if%}
-                      {% endfor %}
+                    {% for post in site.posts %} 
+                        {% if post.project == null %}
+                    <ul>
+                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
+                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}-{{post.author}}</a>
+                            <p>{{ post.excerpt }}</p>
+                            <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">Read More</a>
+                        </li>
+                    </ul>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
